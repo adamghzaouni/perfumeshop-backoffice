@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers - E-Commerce Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h1>E-Commerce Dashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="perfumes.html">Perfumes</a></li>
+                    <li><a href="orders.html">Orders</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li><a href="brand.html">Brand</a></li>
+                    <li><a href="deliveryGuy.html">DeliveryGuy</a></li>
+                </ul>
+            </nav>
+            <button id="loginLogout">Login</button>
+        </aside>
+
+        <main>
+            <header>
+                <h2>Customers</h2>
+            </header>
+            <section id="customers">
+                <form id="customerForm">
+                    <input type="text" id="customerName" placeholder="Customer Name" required>
+                    <input type="email" id="customerEmail" placeholder="Email" required>
+                    <button type="submit">Add Customer</button>
+                </form>
+                <table id="customerTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if (!localStorage.getItem('isLoggedIn')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
+
