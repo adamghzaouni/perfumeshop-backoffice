@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders - E-Commerce Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h1>E-Commerce Dashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="perfumes.html">Perfumes</a></li>
+                    <li><a href="orders.html">Orders</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li><a href="brand.html">Brand</a></li>
+                    <li><a href="deliveryGuy.html">DeliveryGuy</a></li>
+                </ul>
+            </nav>
+            <button id="loginLogout">Login</button>
+        </aside>
+
+        <main>
+            <header>
+                <h2>Orders</h2>
+            </header>
+            <section id="orders">
+                <form id="orderForm">
+                    <input type="text" id="orderCustomer" placeholder="Customer Name" required>
+                    <input type="text" id="orderPerfume" placeholder="Perfume" required>
+                    <input type="number" id="orderQuantity" placeholder="Quantity" required>
+                    <select id="orderDeliveryGuy" required>
+                        <option value="">Select Delivery Guy</option>
+                        <!-- This will be populated dynamically -->
+                    </select>
+                    <button type="submit">Add Order</button>
+                </form>
+                <table id="orderTable">
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Perfume</th>
+                            <th>Quantity</th>
+                            <th>Date</th>
+                            <th>Delivery Guy</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if (!localStorage.getItem('isLoggedIn')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
+
